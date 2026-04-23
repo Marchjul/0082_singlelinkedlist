@@ -20,4 +20,23 @@ public:
     }
 
     void addNode()
+    {
+        int nim;
+        cout << "\nMasukan Nomor Mahasiswa : ";
+        cin >> nim;
+
+        Node *nodeBaru = new Node;
+        if (START == NULL || nim <= START->noMhs)
+        {
+            if (START != NULL && nim == START->noMhs)
+            {
+                cout << "\nDuplikasi noMhs tidak diijinkan\n";
+                return;
+            }
+
+            nodeBaru->next = START;
+            START = nodeBaru;
+        
+        }
+    }
 };
